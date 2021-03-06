@@ -1,7 +1,9 @@
 import toml
 import crossref_commons.retrieval
+from pytablewriter import MarkdownTableWriter
 
 filename = "data.toml"
+filename_md = "output.md"
 
 with open(filename, "r") as f:
     data_bytes = f.read()
@@ -29,3 +31,22 @@ for chap in data:
 
 with open(filename, "w") as f:
     f.write(toml.dumps(data))
+
+
+chap_str = ""
+
+for chap in data:
+    rows = []
+    for citation in data[chap]:
+        cite = data[chap][citation]
+        rows.append([citation, cite[NAME], cite[DOI]])
+
+    writer = MarkdownTableWriter(
+        table_name=chap, headers=["#", "Citation", "DOI"], value_matrix=rows
+    )
+
+    chap_str += writer.dumps()
+    chap_str += "\n"
+
+with open(filename_md, "w") as f:
+    f.write(chap_str)
