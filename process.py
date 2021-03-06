@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import toml
 import crossref_commons.retrieval
 from pytablewriter import MarkdownTableWriter
@@ -13,7 +15,12 @@ data = toml.loads(data_bytes)
 
 NAME = "name"
 DOI = "doi"
-STYLE = "apa"  # http://api.crossref.org/styles
+STYLE = "american-medical-association"  # http://api.crossref.org/styles
+
+
+def linkify(doi):
+    return "[%s](https://doi.org/%s)" % (doi, doi)
+
 
 for chap in data:
     for citation in data[chap]:
@@ -39,7 +46,7 @@ for chap in data:
     rows = []
     for citation in data[chap]:
         cite = data[chap][citation]
-        rows.append([citation, cite[NAME], cite[DOI]])
+        rows.append([citation, cite[NAME], linkify(cite[DOI])])
 
     writer = MarkdownTableWriter(
         table_name=chap, headers=["#", "Citation", "DOI"], value_matrix=rows
