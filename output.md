@@ -9,6 +9,11 @@
 |  3|Wong, F. C. K., & Lo, Y. M. D. (2016). Prenatal Diagnosis Innovation: Genome Sequencing of Maternal Plasma. Annual Review of Medicine, 67, 419–432.                                                                                    |[10.1146/annurev-med-091014-115715](https://doi.org/10.1146/annurev-med-091014-115715)|
 | 10|Sundberg, K., Bang, J., Smidt-Jensen, S., Brocks, V., Lundsteen, C., Parner, J., … Philip, J. (1997). Randomised study of risk of fetal loss related to early amniocentesis versus chorionic villus sampling. The Lancet, 350, 697–703.|[10.1016/S0140-6736(97)02449-5](https://doi.org/10.1016/S0140-6736(97)02449-5)        |
 
+# Chapter 11
+| # |                                                                                    Citation                                                                                     |                         DOI                          |
+|--:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
+|  1|McKenna, D. S., Ventolini, G., Neiger, R., & Downing, C. (2005). Gender-Related Differences in Fetal Heart Rate during First Trimester. Fetal Diagnosis and Therapy, 21, 144–147.|[10.1159/000089065](https://doi.org/10.1159/000089065)|
+
 # Chapter 13
 | # |                                                                   Citation                                                                   |                                      DOI                                       |
 |--:|----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
