@@ -14,3 +14,8 @@
 |--:|----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
 |  1|GEDEON, C., & KOREN, G. (2006). Designing Pregnancy Centered Medications: Drugs Which Do Not Cross the Human Placenta☆. Placenta, 27, 861–868.|[10.1016/j.placenta.2005.09.001](https://doi.org/10.1016/j.placenta.2005.09.001)|
 
+# Chapter 17
+| # |                                                                                                            Citation                                                                                                             |                                    DOI                                     |
+|--:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+|  1|Keag, O. E., Norman, J. E., & Stock, S. J. (2018). Long-term risks and benefits associated with cesarean delivery for mother, baby, and subsequent pregnancies: Systematic review and meta-analysis. PLOS Medicine, 15, e1002494.|[10.1371/journal.pmed.1002494](https://doi.org/10.1371/journal.pmed.1002494)|
+
