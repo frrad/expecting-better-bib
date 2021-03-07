@@ -15,7 +15,13 @@ data = toml.loads(data_bytes)
 
 NAME = "name"
 DOI = "doi"
-STYLE = "american-medical-association"  # http://api.crossref.org/styles
+# curl --silent http://api.crossref.org/styles | jq .message.items | sort | tail -n +3 | less
+STYLE = {
+    "AMA": "american-medical-association",
+    "APA": "apa-no-doi-no-issue",
+    "IEEE": "ieee",
+    "MLA": "modern-language-association",
+}
 NUM = "number"
 
 
@@ -27,7 +33,7 @@ for chap in data:
     for cite in data[chap]:
         if cite[DOI] != "" and (NAME not in cite or cite[NAME] == ""):
             metadata = crossref_commons.retrieval.get_publication_as_refstring(
-                cite[DOI], STYLE
+                cite[DOI], STYLE["APA"]
             )
 
             metadata = metadata.strip()
