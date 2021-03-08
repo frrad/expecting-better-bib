@@ -9,6 +9,11 @@ number = 3
 name = "Wong, F. C. K., & Lo, Y. M. D. (2016). Prenatal Diagnosis Innovation: Genome Sequencing of Maternal Plasma. Annual Review of Medicine, 67, 419–432."
 
 [["Chapter 8"]]
+doi = "10.1002/uog.14792"
+number = 4
+name = "Zhang, H., Gao, Y., Jiang, F., Fu, M., Yuan, Y., Guo, Y., … Wang, W. (2015). Non-invasive prenatal testing for trisomies 21, 18 and 13: clinical experience from 146 958 pregnancies. Ultrasound in Obstetrics & Gynecology, 45, 530–538."
+
+[["Chapter 8"]]
 doi = "10.1016/S0140-6736(97)02449-5"
 number = 10
 name = "Sundberg, K., Bang, J., Smidt-Jensen, S., Brocks, V., Lundsteen, C., Parner, J., … Philip, J. (1997). Randomised study of risk of fetal loss related to early amniocentesis versus chorionic villus sampling. The Lancet, 350, 697–703."
@@ -17,6 +22,21 @@ name = "Sundberg, K., Bang, J., Smidt-Jensen, S., Brocks, V., Lundsteen, C., Par
 doi = "10.1159/000089065"
 number = 1
 name = "McKenna, D. S., Ventolini, G., Neiger, R., & Downing, C. (2005). Gender-Related Differences in Fetal Heart Rate during First Trimester. Fetal Diagnosis and Therapy, 21, 144–147."
+
+[["Chapter 11"]]
+doi = "10.1097/AOG.0b013e3181c3c938"
+number = 2
+name = "Scheffer, P. G., van der Schoot, C. E., Page-Christiaens, G. C. M. L., Bossers, B., van Erp, F., & de Haas, M. (2010). Reliability of Fetal Sex Determination Using Maternal Plasma. Obstetrics & Gynecology, 115, 117–126."
+
+[["Chapter 11"]]
+doi = "10.1111/j.0730-7659.2004.00319.x"
+number = 3
+name = "Shipp, T. D., Shipp, D. Z., Bromley, B., Sheahan, R., Cohen, A., Lieberman, E., & Benacerraf, B. (2004). What Factors Are Associated with Parents’ Desire To Know the Sex of Their Unborn Child? Birth, 31, 272–279."
+
+[["Chapter 11"]]
+doi = "10.1056/NEJM199512073332301"
+number = 4
+name = "Wilcox, A. J., Weinberg, C. R., & Baird, D. D. (1995). Timing of Sexual Intercourse in Relation to Ovulation — Effects on the Probability of Conception, Survival of the Pregnancy, and Sex of the Baby. New England Journal of Medicine, 333, 1517–1521."
 
 [["Chapter 13"]]
 doi = "10.1016/j.placenta.2005.09.001"
