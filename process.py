@@ -5,7 +5,7 @@ import crossref_commons.retrieval
 from pytablewriter import MarkdownTableWriter
 
 filename = "data.toml"
-filename_md = "output.md"
+filename_md = "README.md"
 
 with open(filename, "r") as f:
     data_bytes = f.read()
@@ -26,7 +26,8 @@ NUM = "number"
 
 
 def linkify(doi):
-    return "[%s](https://doi.org/%s)" % (doi, doi)
+    SITE = "https://doi.org"
+    return "[%s](%s/%s)" % (doi, SITE, doi)
 
 
 for chap in data:
