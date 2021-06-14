@@ -26,8 +26,9 @@ NUM = "number"
 
 
 def linkify(doi):
-    SITE = "https://doi.org"
-    return "[%s](%s/%s)" % (doi, SITE, doi)
+    SITE = "https://doi.org/%s"
+    LINK = SITE % doi
+    return "[%s](%s)" % (doi, LINK)
 
 
 for chap in data:
