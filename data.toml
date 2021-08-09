@@ -43,6 +43,16 @@ doi = "10.1016/j.placenta.2005.09.001"
 number = 1
 name = "GEDEON, C., & KOREN, G. (2006). Designing Pregnancy Centered Medications: Drugs Which Do Not Cross the Human Placenta☆. Placenta, 27, 861–868."
 
+[["Chapter 16"]]
+doi = "10.1002/uog.913"
+number = 4
+name = "Ramanathan, G., Yu, C., Osei, E., & Nicolaides, K. H. (2003). Ultrasound examination at 37 weeks’ gestation in the prediction of pregnancy outcome: the value of cervical assessment. Ultrasound in Obstetrics and Gynecology, 22, 598–603."
+
+[["Chapter 16"]]
+doi = "10.1067/mob.2001.111248"
+number = 6
+name = "Iams, J. D., Goldenberg, R. L., Mercer, B. M., Moawad, A. H., Meis, P. J., Das, A. F., … Roberts, J. H. (2001). The Preterm Prediction Study: Can low-risk women destined for spontaneous preterm birth be identified? American Journal of Obstetrics and Gynecology, 184, 652–655."
+
 [["Chapter 17"]]
 doi = "10.1371/journal.pmed.1002494"
 number = 1
@@ -82,4 +92,9 @@ name = "Zhang, J., Troendle, J. F., & Yancey, M. K. (2002). Reassessing the labo
 doi = "10.1111/j.1471-0528.1985.tb01043.x"
 number = 4
 name = "WESTGREN, M., EDVALL, H., NORDSTRoM, L., SVALENIUS, E., & RANSTAM, J. (1985). Spontaneous cephalic version of breech presentation in the last trimester. BJOG: An International Journal of Obstetrics and Gynaecology, 92, 19–22."
+
+[["Chapter 18"]]
+doi = "10.1002/14651858.CD000083.pub3"
+number = 5
+name = "Hofmeyr, G. J., Kulier, R., & West, H. M. (2015). External cephalic version for breech presentation at term. Cochrane Database of Systematic Reviews. doi:10.1002/14651858.cd000083.pub3"
 
