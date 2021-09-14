@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
-import toml
-import crossref_commons.retrieval
 from pytablewriter import MarkdownTableWriter
+import crossref_commons.retrieval
+import requests
+import toml
 
 filename = "data.toml"
 filename_md = "BIBLIOGRAPHY.md"
@@ -11,6 +12,7 @@ NAME = "name"
 DOI = "doi"
 ISBN = "isbn"
 
+ISBN_FORMAT_STRING = "https://www.google.com/search?tbm=bks&q=isbn:%s"
 
 # curl --silent http://api.crossref.org/styles | jq .message.items | sort | tail -n +3 | less
 STYLE = {
@@ -28,8 +30,36 @@ def linkify(doi):
     return "[%s](%s)" % (doi, LINK)
 
 
+def linkify_isbn(isbn):
+    link = ISBN_FORMAT_STRING % isbn
+    return "[%s](%s)" % (isbn, link)
+
+
+def author_string_from_list(authors):
+    string = authors[0]
+
+    for i, a in enumerate(authors[1:]):
+        if i == len(authors) - 2:
+            string += ", and " + a
+        else:
+            string += ", " + a
+
+    return string
+
+
 def book_from_isbn(isbn):
-    return "heh"
+    url = "https://www.googleapis.com/books/v1/volumes?q=isbn:{}".format(isbn)
+    r = requests.get(url)
+    info = r.json()["items"][0]["volumeInfo"]
+
+    info["authorString"] = author_string_from_list(info["authors"])
+
+    # change if no subtitle
+    info["titleAndSubtitle"] = "{title}: {subtitle}".format(**info)
+
+    return "{authorString}, _{titleAndSubtitle}_ ({publisher}, {publishedDate})".format(
+        **info
+    )
 
 
 def main():
@@ -70,10 +100,10 @@ def main():
             if DOI in cite:
                 rows.append([cite[NUM], cite[NAME], linkify(cite[DOI])])
             else:
-                rows.append([cite[NUM], cite[NAME], linkify(cite[ISBN])])
+                rows.append([cite[NUM], cite[NAME], linkify_isbn(cite[ISBN])])
 
         writer = MarkdownTableWriter(
-            table_name=chap, headers=["#", "Citation", "DOI"], value_matrix=rows
+            table_name=chap, headers=["#", "Citation", "DOI / ISBN"], value_matrix=rows
         )
 
         chap_str += writer.dumps()
