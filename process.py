@@ -13,6 +13,8 @@ DOI = "doi"
 ISBN = "isbn"
 
 ISBN_FORMAT_STRING = "https://www.google.com/search?tbm=bks&q=isbn:%s"
+DOI_FORMAT_STRING = "https://doi.org/%s"
+
 
 # curl --silent http://api.crossref.org/styles | jq .message.items | sort | tail -n +3 | less
 STYLE = {
@@ -25,9 +27,8 @@ NUM = "number"
 
 
 def linkify(doi):
-    SITE = "https://doi.org/%s"
-    LINK = SITE % doi
-    return "[%s](%s)" % (doi, LINK)
+    link = DOI_FORMAT_STRING % doi
+    return "[%s](%s)" % (doi, link)
 
 
 def linkify_isbn(isbn):
@@ -99,8 +100,10 @@ def main():
         for cite in data[chap]:
             if DOI in cite:
                 rows.append([cite[NUM], cite[NAME], linkify(cite[DOI])])
-            else:
+            elif ISBN in cite:
                 rows.append([cite[NUM], cite[NAME], linkify_isbn(cite[ISBN])])
+            else:
+                rows.append([cite[NUM], cite[NAME], ""])
 
         writer = MarkdownTableWriter(
             table_name=chap, headers=["#", "Citation", "DOI / ISBN"], value_matrix=rows
