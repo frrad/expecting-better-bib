@@ -102,6 +102,8 @@ def main():
                 rows.append([cite[NUM], cite[NAME], linkify(cite[DOI])])
             elif ISBN in cite:
                 rows.append([cite[NUM], cite[NAME], linkify_isbn(cite[ISBN])])
+            else:
+                rows.append([cite[NUM], cite[NAME], ""])
 
         writer = MarkdownTableWriter(
             table_name=chap, headers=["#", "Citation", "DOI / ISBN"], value_matrix=rows
