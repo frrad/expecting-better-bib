@@ -4,6 +4,11 @@ number = 13
 name = "McKeigue, P. M., Lamm, S. H., Linn, S., & Kutcher, J. S. (1994). Bendectin and birth defects: I. A meta-analysis of the epidemiologic studies. Teratology, 50, 27–37."
 
 [["Chapter 8"]]
+isbn = "9780443069307"
+number = 1
+
+
+[["Chapter 8"]]
 doi = "10.1146/annurev-med-091014-115715"
 number = 3
 name = "Wong, F. C. K., & Lo, Y. M. D. (2016). Prenatal Diagnosis Innovation: Genome Sequencing of Maternal Plasma. Annual Review of Medicine, 67, 419–432."
