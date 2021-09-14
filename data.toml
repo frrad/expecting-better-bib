@@ -4,6 +4,11 @@ number = 13
 name = "McKeigue, P. M., Lamm, S. H., Linn, S., & Kutcher, J. S. (1994). Bendectin and birth defects: I. A meta-analysis of the epidemiologic studies. Teratology, 50, 27–37."
 
 [["Chapter 8"]]
+isbn = "9780443069307"
+number = 1
+name = "Steven G. Gabbe, Jennifer R. Niebyl, and Joe Leigh Simpson, _Obstetrics: Normal and Problem Pregnancies_ (Churchill Livingstone, 2007)"
+
+[["Chapter 8"]]
 doi = "10.1146/annurev-med-091014-115715"
 number = 3
 name = "Wong, F. C. K., & Lo, Y. M. D. (2016). Prenatal Diagnosis Innovation: Genome Sequencing of Maternal Plasma. Annual Review of Medicine, 67, 419–432."
@@ -12,6 +17,31 @@ name = "Wong, F. C. K., & Lo, Y. M. D. (2016). Prenatal Diagnosis Innovation: Ge
 doi = "10.1002/uog.14792"
 number = 4
 name = "Zhang, H., Gao, Y., Jiang, F., Fu, M., Yuan, Y., Guo, Y., … Wang, W. (2015). Non-invasive prenatal testing for trisomies 21, 18 and 13: clinical experience from 146 958 pregnancies. Ultrasound in Obstetrics & Gynecology, 45, 530–538."
+
+[["Chapter 8"]]
+doi = "10.1097/GIM.0b013e3182368a0e"
+number = 5
+name = "Palomaki, G. E., Kloza, E. M., Lambert-Messerlian, G. M., Haddow, J. E., Neveux, L. M., Ehrich, M., … Canick, J. A. (2011). DNA sequencing of maternal plasma to detect Down syndrome: An international clinical validation study. Genetics in Medicine, 13, 913–920."
+
+[["Chapter 8"]]
+doi = "10.1056/NEJMoa043693"
+number = 6
+name = "Malone, F. D., Canick, J. A., Ball, R. H., Nyberg, D. A., Comstock, C. H., Bukowski, R., … D’Alton, M. E. (2005). First-Trimester or Second-Trimester Screening, or Both, for Down’s Syndrome. New England Journal of Medicine, 353, 2001–2011."
+
+[["Chapter 8"]]
+doi = "10.1002/uog.5331"
+number = 7
+name = "Kagan, K. O., Wright, D., Baker, A., Sahota, D., & Nicolaides, K. H. (2008). Screening for trisomy 21 by maternal age, fetal nuchal translucency thickness, free beta-human chorionic gonadotropin and pregnancy-associated plasma protein-A. Ultrasound in Obstetrics and Gynecology, 31, 618–624."
+
+[["Chapter 8"]]
+doi = "10.1056/NEJMoa043693"
+number = 8
+name = "Malone, F. D., Canick, J. A., Ball, R. H., Nyberg, D. A., Comstock, C. H., Bukowski, R., … D’Alton, M. E. (2005). First-Trimester or Second-Trimester Screening, or Both, for Down’s Syndrome. New England Journal of Medicine, 353, 2001–2011."
+
+[["Chapter 8"]]
+doi = "10.1002/pd.420"
+number = 9
+name = "Spencer, K., & Nicolaides, K. H. (2002). A first trimester trisomy 13/trisomy 18 risk algorithm combining fetal nuchal translucency thickness, maternal serum free\u202f?-hCG and PAPP-A. Prenatal Diagnosis, 22, 877–879."
 
 [["Chapter 8"]]
 doi = "10.1016/S0140-6736(97)02449-5"

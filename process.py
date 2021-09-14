@@ -1,20 +1,19 @@
 #!/usr/bin/python3
 
-import toml
-import crossref_commons.retrieval
 from pytablewriter import MarkdownTableWriter
+import crossref_commons.retrieval
+import requests
+import toml
 
 filename = "data.toml"
 filename_md = "BIBLIOGRAPHY.md"
 
-with open(filename, "r") as f:
-    data_bytes = f.read()
-
-
-data = toml.loads(data_bytes)
-
 NAME = "name"
 DOI = "doi"
+ISBN = "isbn"
+
+ISBN_FORMAT_STRING = "https://www.google.com/search?tbm=bks&q=isbn:%s"
+
 # curl --silent http://api.crossref.org/styles | jq .message.items | sort | tail -n +3 | less
 STYLE = {
     "AMA": "american-medical-association",
@@ -31,33 +30,88 @@ def linkify(doi):
     return "[%s](%s)" % (doi, LINK)
 
 
-for chap in data:
-    for cite in data[chap]:
-        if cite[DOI] != "" and (NAME not in cite or cite[NAME] == ""):
-            metadata = crossref_commons.retrieval.get_publication_as_refstring(
-                cite[DOI], STYLE["APA"]
-            )
-
-            metadata = metadata.strip()
-            cite[NAME] = metadata
-
-with open(filename, "w") as f:
-    f.write(toml.dumps(data))
+def linkify_isbn(isbn):
+    link = ISBN_FORMAT_STRING % isbn
+    return "[%s](%s)" % (isbn, link)
 
 
-chap_str = ""
+def author_string_from_list(authors):
+    string = authors[0]
 
-for chap in data:
-    rows = []
-    for cite in data[chap]:
-        rows.append([cite[NUM], cite[NAME], linkify(cite[DOI])])
+    for i, a in enumerate(authors[1:]):
+        if i == len(authors) - 2:
+            string += ", and " + a
+        else:
+            string += ", " + a
 
-    writer = MarkdownTableWriter(
-        table_name=chap, headers=["#", "Citation", "DOI"], value_matrix=rows
+    return string
+
+
+def book_from_isbn(isbn):
+    url = "https://www.googleapis.com/books/v1/volumes?q=isbn:{}".format(isbn)
+    r = requests.get(url)
+    info = r.json()["items"][0]["volumeInfo"]
+
+    info["authorString"] = author_string_from_list(info["authors"])
+
+    # change if no subtitle
+    info["titleAndSubtitle"] = "{title}: {subtitle}".format(**info)
+
+    return "{authorString}, _{titleAndSubtitle}_ ({publisher}, {publishedDate})".format(
+        **info
     )
 
-    chap_str += writer.dumps()
-    chap_str += "\n"
 
-with open(filename_md, "w") as f:
-    f.write(chap_str)
+def main():
+    with open(filename, "r") as f:
+        data_bytes = f.read()
+
+    data = toml.loads(data_bytes)
+
+    for chap in data:
+        for cite in data[chap]:
+            if (
+                DOI in cite
+                and cite[DOI] != ""
+                and (NAME not in cite or cite[NAME] == "")
+            ):
+                metadata = crossref_commons.retrieval.get_publication_as_refstring(
+                    cite[DOI], STYLE["APA"]
+                )
+
+                metadata = metadata.strip()
+                cite[NAME] = metadata
+
+            if (
+                ISBN in cite
+                and cite[ISBN] != ""
+                and (NAME not in cite or cite[NAME] == "")
+            ):
+                cite[NAME] = book_from_isbn(cite[ISBN])
+
+    with open(filename, "w") as f:
+        f.write(toml.dumps(data))
+
+    chap_str = ""
+
+    for chap in data:
+        rows = []
+        for cite in data[chap]:
+            if DOI in cite:
+                rows.append([cite[NUM], cite[NAME], linkify(cite[DOI])])
+            else:
+                rows.append([cite[NUM], cite[NAME], linkify_isbn(cite[ISBN])])
+
+        writer = MarkdownTableWriter(
+            table_name=chap, headers=["#", "Citation", "DOI / ISBN"], value_matrix=rows
+        )
+
+        chap_str += writer.dumps()
+        chap_str += "\n"
+
+    with open(filename_md, "w") as f:
+        f.write(chap_str)
+
+
+if __name__ == "__main__":
+    main()
