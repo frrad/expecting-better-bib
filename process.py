@@ -100,7 +100,7 @@ def main():
         for cite in data[chap]:
             if DOI in cite:
                 rows.append([cite[NUM], cite[NAME], linkify(cite[DOI])])
-            else:
+            elif ISBN in cite:
                 rows.append([cite[NUM], cite[NAME], linkify_isbn(cite[ISBN])])
 
         writer = MarkdownTableWriter(

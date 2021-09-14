@@ -9,6 +9,10 @@ number = 1
 name = "Steven G. Gabbe, Jennifer R. Niebyl, and Joe Leigh Simpson, _Obstetrics: Normal and Problem Pregnancies_ (Churchill Livingstone, 2007)"
 
 [["Chapter 8"]]
+number = 2
+name = "www.bookofodds.com"
+
+[["Chapter 8"]]
 doi = "10.1146/annurev-med-091014-115715"
 number = 3
 name = "Wong, F. C. K., & Lo, Y. M. D. (2016). Prenatal Diagnosis Innovation: Genome Sequencing of Maternal Plasma. Annual Review of Medicine, 67, 419–432."
@@ -47,6 +51,10 @@ name = "Spencer, K., & Nicolaides, K. H. (2002). A first trimester trisomy 13/tr
 doi = "10.1016/S0140-6736(97)02449-5"
 number = 10
 name = "Sundberg, K., Bang, J., Smidt-Jensen, S., Brocks, V., Lundsteen, C., Parner, J., … Philip, J. (1997). Randomised study of risk of fetal loss related to early amniocentesis versus chorionic villus sampling. The Lancet, 350, 697–703."
+
+[["Chapter 8"]]
+number = 11
+name = "NICIID Study Group. (1976). Midtrimester amniocentesis for prenatal diagnosis. JAMA, 236, 1471-1476."
 
 [["Chapter 8"]]
 doi = "10.1016/S0140-6736(86)91218-3"
