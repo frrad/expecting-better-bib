@@ -25,6 +25,10 @@ def linkify(doi):
     return "[%s](%s)" % (doi, LINK)
 
 
+def book_from_isbn(isbn):
+    return "heh"
+
+
 def main():
     with open(filename, "r") as f:
         data_bytes = f.read()
@@ -40,6 +44,9 @@ def main():
 
                 metadata = metadata.strip()
                 cite[NAME] = metadata
+
+            if cite[ISBN] != "" and (NAME not in cite or cite[NAME] == ""):
+                cite[NAME] = book_from_isbn(cite[ISBN])
 
     with open(filename, "w") as f:
         f.write(toml.dumps(data))
