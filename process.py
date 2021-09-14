@@ -40,7 +40,11 @@ def main():
 
     for chap in data:
         for cite in data[chap]:
-            if cite[DOI] != "" and (NAME not in cite or cite[NAME] == ""):
+            if (
+                DOI in cite
+                and cite[DOI] != ""
+                and (NAME not in cite or cite[NAME] == "")
+            ):
                 metadata = crossref_commons.retrieval.get_publication_as_refstring(
                     cite[DOI], STYLE["APA"]
                 )
@@ -63,7 +67,10 @@ def main():
     for chap in data:
         rows = []
         for cite in data[chap]:
-            rows.append([cite[NUM], cite[NAME], linkify(cite[DOI])])
+            if DOI in cite:
+                rows.append([cite[NUM], cite[NAME], linkify(cite[DOI])])
+            else:
+                rows.append([cite[NUM], cite[NAME], linkify(cite[ISBN])])
 
         writer = MarkdownTableWriter(
             table_name=chap, headers=["#", "Citation", "DOI"], value_matrix=rows
