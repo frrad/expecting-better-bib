@@ -5,7 +5,7 @@ import crossref_commons.retrieval
 from pytablewriter import MarkdownTableWriter
 
 filename = "data.toml"
-filename_md = "README.md"
+filename_md = "BIBLIOGRAPHY.md"
 
 with open(filename, "r") as f:
     data_bytes = f.read()
