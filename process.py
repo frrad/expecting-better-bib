@@ -9,6 +9,9 @@ filename_md = "BIBLIOGRAPHY.md"
 
 NAME = "name"
 DOI = "doi"
+ISBN = "isbn"
+
+
 # curl --silent http://api.crossref.org/styles | jq .message.items | sort | tail -n +3 | less
 STYLE = {
     "AMA": "american-medical-association",
@@ -45,7 +48,11 @@ def main():
                 metadata = metadata.strip()
                 cite[NAME] = metadata
 
-            if cite[ISBN] != "" and (NAME not in cite or cite[NAME] == ""):
+            if (
+                ISBN in cite
+                and cite[ISBN] != ""
+                and (NAME not in cite or cite[NAME] == "")
+            ):
                 cite[NAME] = book_from_isbn(cite[ISBN])
 
     with open(filename, "w") as f:
